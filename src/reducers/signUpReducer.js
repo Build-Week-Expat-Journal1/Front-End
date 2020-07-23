@@ -1,12 +1,17 @@
 //---------------------------//
 //     IMPORT ACTIONS        //
 //---------------------------//
-import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } from "../actions/signUpAction";
+import { SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_FAILURE } from "../actions/signUpAction";
+
 
 //---------------------------//
 //     INITIAL STATE         //
 //---------------------------//
-
+const initialState = {
+    error: '',
+    token: '' ,
+    loggingIn: ''
+};
 
 
 
@@ -15,15 +20,26 @@ import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } from "../actions/signU
 //---------------------------//
 export const signUpReducer = (state = initalState, action) => {
     switch(action.type){
-        case SIGNUP_REQUEST:
-            return {};
+        case SIGNUP_START:
+            return {
+                ...state, 
+                loggingIn: true
+            };
 
         case SIGNUP_SUCCESS:
-            return {};
+            return {
+                ...state, 
+                token: action.payload,
+                loggingIn: false
+            };
 
         case SIGNUP_FAILURE:
-            return {};
+            return {
+                ...state, 
+                error: action.payload,
+                loggingIn: false
+            };
         default: 
-        return state
+        return state;
     }
 }
