@@ -1,27 +1,24 @@
 import React from "react";
-import {Link, Switch, Route} from "react-router-dom";
-
+import { Link, Switch, Route } from "react-router-dom";
 
 const NavBar = () => {
-
-    return(
-        <div className =  "NavBar">
-            <nav>
-                <h3>Expat Journal</h3>
-                <Link to="/">Landing</Link>
-                <Link to="/SignIn">Sign In</Link>
-                <Link to="/SignUp">Sign Up</Link>
-                <Link to="/Discover">Discover</Link>
-            </nav>
-            {/* <Switch>
+  return (
+    <div className="NavBar">
+      <nav>
+        <h3>Expat Journal</h3>
+        <Link to="/">Landing</Link>
+        <Link to="/login">Sign In</Link>
+        <Link to="/register">Sign Up</Link>
+        <Link to="/Discover">Discover</Link>
+      </nav>
+      {/* <Switch>
                 <Route exact path="/" component={}/>
                 <Route path="/SignIn" component={}/>
                 <Route path="/SignUp" component={}/>
                 <Route path="/Discover" component={}/>
             </Switch> */}
-
-        </div>
-    )
-}
+    </div>
+  );
+};
 
 export default NavBar;
