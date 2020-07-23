@@ -1,7 +1,6 @@
 //---------------------------//
 //     IMPORT ACTIONS        //
 //---------------------------//
-
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from "../actions/loginAction";
 
 
@@ -18,7 +17,7 @@ import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from "../actions/loginAct
 
 export const loginReducer = (state = initialState, action){
     switch(action.type){
-        case LOGIN_REQUEST:
+       case LOGIN_REQUEST:
             return{
 
             }
