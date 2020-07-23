@@ -1,13 +1,22 @@
-import axios from "axios";
+//----------------//
+//     IMPORT     //
+//----------------//
+import { axiosWithAuth } from '../utils';
 
+//------------------------------//
+//  EXPORT FROM SIGNUP REDUCER  //
+//------------------------------//
 export const SIGNUP_START = 'SIGNUP_USER_START';
 export const SIGNUP_SUCCESS = 'SIGNUP_USER_SUCCESS';
 export const SIGNUP_FAILURE = 'SIGNUP_USER_FAILURE';
 
+//-----------------------//
+//      SIGNUP ACTION    //
+//-----------------------//
 export const signUp = credentials => dispatch =>{
     dispatch({ type: SIGNUP_START });
-    axios
-    .post('', credentials)//api/register or signup
+    axiosWithAuth()
+    .post('/api/signup', credentials)//api/register or signup
     .then(res => {
         localStorage.setItem('token', res.data.token);
         dispatch({
