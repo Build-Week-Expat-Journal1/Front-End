@@ -5,8 +5,8 @@ import Register from'./components/register';
 import Login from'./components/login';
 
 import './App.css';
-import FormCreateStoryPictures from "./component/FormCreateStoryPictures"
-import NavBar from "./component/NavBar"
+import FormCreateStoryPictures from "./components/FormCreateStoryPictures"
+import NavBar from "./components/NavBar"
 
 const App =() => {
 return (
