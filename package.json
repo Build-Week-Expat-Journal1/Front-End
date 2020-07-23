@@ -10,9 +10,14 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+<<<<<<< HEAD
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "sass": "^1.26.10"
+=======
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5"
+>>>>>>> 778319001df9db0e51f3595d40599a53895b2794
   },
   "scripts": {
     "start": "react-scripts start",
