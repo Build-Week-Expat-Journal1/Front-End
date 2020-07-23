@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { BrowserRouter as Router,Route, Switch } from 'react-router-dom'
 import './App.css';
 import Register from'./components/register';
@@ -17,6 +18,27 @@ return (
 
 )
 
+=======
+import './App.css';
+<<<<<<< HEAD
+import FormCreateStoryPictures from "./component/FormCreateStoryPictures"
+=======
+import NavBar from "./component/NavBar"
+>>>>>>> 52c740be5209c820ecff014dab0e55a2c8242c51
+
+function App() {
+  return (
+    <div className="App">
+<<<<<<< HEAD
+      <FormCreateStoryPictures/>
+     
+  
+=======
+      <NavBar/>
+>>>>>>> 52c740be5209c820ecff014dab0e55a2c8242c51
+    </div>
+  );
+>>>>>>> aa338782c43c13b4d021034ba4aedb8b1a5959ad
 }
 
 export default App;
