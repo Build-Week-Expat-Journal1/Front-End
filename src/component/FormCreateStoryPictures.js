@@ -12,16 +12,21 @@ export default function FormCreateStoryPictures(){
         storyTitle:"",
         date:"",
         storyBody:"",
-        privacy:"",
-        photo: []
+        private:"",
+       // photo: []
     };
 
     const [formState, setFormState]= useState(defaultState);
     const [errors, setErrors] = useState(defaultState);
 
-    // const formSchema = yup.object(),shape({
+    const formSchema = yup.object().shape({
+        user: yup.string(),
+        storyTitle: yup.string(),
+        date: yup.date(),
+        storyBody: yup.string(),
+        private: yup.boolean()
         
-    // })
+    })
 
         const validateChange = e =>{
             yup
@@ -40,6 +45,7 @@ export default function FormCreateStoryPictures(){
             });
         }, [formState]);
         console.log("this is post after useEffect",post );
+
 
         const formSubmit = e =>{
             e.preventDefault();
@@ -75,7 +81,7 @@ export default function FormCreateStoryPictures(){
 
     return(
 
-    <h2>Create Your Story</h2>
+   // <h2>Create Your Story</h2>
     <form onSubmit = {formSubmit}>
         <label htmlFor = "user">
             User Name
@@ -87,8 +93,45 @@ export default function FormCreateStoryPictures(){
 
         <label htmlFor = "storyTitle">
             Title
-            <input id="storyTitle"
+            <input id="storyTitle" type="text" name="storyTitle" data-cy="storyTitle"
+            onChange={inputChange}
+            value={formState.name}
+            />
         </label>
+
+        <label htmlFor = "date">
+            Date
+            <input id="date" type="text" name="date" data-cy="date"
+            onChange={inputChange}
+            value={formState.name}
+            />
+        </label>
+
+        <lable htmlFor="storyBody">
+            Tell us your story
+            <textarea name="storyBody" id="storyBody" data-cy="storyBody"
+            onChange={inputChange}
+            value={formState.name}
+            />
+        </lable>
+
+        <label htmlFor = "private"> 
+            This story is for my eyes only
+            <input type="checkbox" id="private" name="private" data-cy="private"
+            onChange={inputChange}
+            checked={formState.private}
+            />  
+        </label>
+
+        <button disabled={isButtonDisabled} type="submit" name="submit" id="submit">
+            Publish
+        </button>
+
+        <pre>{JSON.stringify(formState,null,2)}</pre>
+        <pre>{JSON.stringify(post,null,2)}</pre>
+
+
+
     </form>
 
     )
