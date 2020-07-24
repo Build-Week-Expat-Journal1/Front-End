@@ -1,50 +1,58 @@
-import React, { useState } from 'react'
+//----------//
+// IMPORTS  //
+//----------//
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 
-const Login = () => {
-   const [user, setUser] = useState({
+//-----------------------//
+// BEGIN LOGIN COMPONENT //
+//-----------------------//
+const Login = (props) => {
+  const [user, setUser] = useState({
+    email: "", // DOES THIS NEED TO BE USERNAME?
+    password: "",
+  });
 
-      email: '',
-      password: '',
+  const { email, password } = user; //CHANGE EMAIL TO USERNAME?
 
-   });
+  const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
-   const { email, password, } = user;
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log("Login submit");
+    props.userLogin({ user }).then(() => {
+      props.history.push("/Discover");
+    });
+    setUser("");
+  };
 
-   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
+  return (
+    <div className="form-container">
+      <h1>
+        Account <span className="text-primary">Login</span>
+      </h1>
+      <form onSubmit={onSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Email Address</label>
+          <input type="email" name="email" value={email} onChange={onChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="name">Password</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={onChange}
+          />
+        </div>
 
-   const onSubmit = e => {
-      e.preventDefault();
-      console.log('Login submit')
-
-   }
-
-   return (
-      <div className='form-container'>
-         <h1>
-            Account <span className='text-primary'>Login</span>
-         </h1>
-         <form onSubmit={onSubmit}>
-            <div className='form-group'>
-               <label htmlFor='name'>Email Address</label>
-               <input type='email' name='email' value={email} onChange={onChange} />
-
-            </div>
-            <div className='form-group'>
-               <label htmlFor='name'>Password</label>
-               <input type='password' name='password' value={password} onChange={onChange} />
-
-            </div>
-
-            <input type='submit' value='Login' className="btn btn-primary btn-block" />
-
-         </form>
-
-      </div>
-
-
-   )
-
-
-
-}
-export default Login;
+        <input
+          type="submit"
+          value="Login"
+          className="btn btn-primary btn-block"
+        />
+      </form>
+    </div>
+  );
+};
+export default withRouter(Login);
