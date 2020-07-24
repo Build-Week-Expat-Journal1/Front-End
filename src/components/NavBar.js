@@ -1,7 +1,9 @@
 import React from "react";
-import { Link, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const NavBar = () => {
+  
   return (
     <div className="NavBar">
       <nav>
@@ -11,14 +13,13 @@ const NavBar = () => {
         <Link to="/register">Sign Up</Link>
         <Link to="/Discover">Discover</Link>
       </nav>
-      {/* <Switch>
-                <Route exact path="/" component={}/>
-                <Route path="/SignIn" component={}/>
-                <Route path="/SignUp" component={}/>
-                <Route path="/Discover" component={}/>
-            </Switch> */}
+       {/* <Switch>
+                <Route exact path="/" component={FormCreateStoryPictures}/>
+                <Route path="/SignIn" component={Login} />
+                <Route path="/SignUp" component={Register} />
+                <Route path="/Discover" component={FormCreateStoryPictures} /> 
+                
+      </Switch> */}
     </div>
-  );
-};
-
-export default NavBar;
+    )};
+    export default NavBar;
