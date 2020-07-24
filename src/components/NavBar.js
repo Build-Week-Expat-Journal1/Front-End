@@ -15,6 +15,7 @@ const NavBar = () => {
         <Link to="/Discover">Discover</Link>
         <Link to="/Contribute">Contribute</Link>
       </nav>
+
       <Switch>
                {/*} <Route exact path="/" component={}/> */}
                 <Route path="/Login" component={login}/> 
@@ -22,6 +23,7 @@ const NavBar = () => {
                 <Route path="/Contribute" component={FormCreateStoryPictures}/>
                {/*} <Route path="/Discover" component={}/> */}
             </Switch>
+
     </div>
   );
 };
