@@ -1,5 +1,6 @@
 import React from "react";
 import {Link, Switch, Route} from "react-router-dom";
+import login from "./components/login";
 
 
 const NavBar = () => {
@@ -13,12 +14,12 @@ const NavBar = () => {
                 <Link to="/SignUp">Sign Up</Link>
                 <Link to="/Discover">Discover</Link>
             </nav>
-            {/* <Switch>
+            <Switch>
                 <Route exact path="/" component={}/>
-                <Route path="/SignIn" component={}/>
+                <Route path="/SignIn" component={login}/>
                 <Route path="/SignUp" component={}/>
                 <Route path="/Discover" component={}/>
-            </Switch> */}
+            </Switch>
 
         </div>
     )
