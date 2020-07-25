@@ -10,6 +10,9 @@ export const SIGNUP_START = 'SIGNUP_USER_START';
 export const SIGNUP_SUCCESS = 'SIGNUP_USER_SUCCESS';
 export const SIGNUP_FAILURE = 'SIGNUP_USER_FAILURE';
 
+
+// ADD IN URL FROM BACKEND
+
 //-----------------------//
 //      SIGNUP ACTION    //
 //-----------------------//
