@@ -1,10 +1,11 @@
 import React from "react";
-import { Link, Switch, Route } from "react-router-dom";
-import login from "../components/login.js";
-import register from "../components/register";
-import FormCreateStoryPictures from "../components/FormCreateStoryPictures.js"
+logOutButton
+import { Link } from "react-router-dom";
+
+
 
 const NavBar = () => {
+  
   return (
     <div className="NavBar">
       <nav>
@@ -15,17 +16,15 @@ const NavBar = () => {
         <Link to="/Discover">Discover</Link>
         <Link to="/Contribute">Contribute</Link>
       </nav>
-
-      <Switch>
-               {/*} <Route exact path="/" component={}/> */}
-                <Route path="/Login" component={login}/> 
-                <Route path="/Register" component={register}/>
-                <Route path="/Contribute" component={FormCreateStoryPictures}/>
-               {/*} <Route path="/Discover" component={}/> */}
-            </Switch>
+logOutButton
+       {/* <Switch>
+                <Route exact path="/" component={FormCreateStoryPictures}/>
+                <Route path="/SignIn" component={Login} />
+                <Route path="/SignUp" component={Register} />
+                <Route path="/Discover" component={FormCreateStoryPictures} /> 
+                
+      </Switch> */}
 
     </div>
-  );
-};
-
-export default NavBar;
+    )};
+    export default NavBar;
