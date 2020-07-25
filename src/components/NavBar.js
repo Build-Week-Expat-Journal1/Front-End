@@ -1,24 +1,30 @@
 import React from "react";
-import { Link, Switch, Route } from "react-router-dom";
+logOutButton
+import { Link } from "react-router-dom";
+
+
 
 const NavBar = () => {
+  
   return (
     <div className="NavBar">
       <nav>
         <h3>Expat Journal</h3>
         <Link to="/">Landing</Link>
-        <Link to="/login">Sign In</Link>
-        <Link to="/register">Sign Up</Link>
+        <Link to="/Login">Log In</Link>
+        <Link to="/Register">Register</Link>
         <Link to="/Discover">Discover</Link>
+        <Link to="/Contribute">Contribute</Link>
       </nav>
-      {/* <Switch>
-                <Route exact path="/" component={}/>
-                <Route path="/SignIn" component={}/>
-                <Route path="/SignUp" component={}/>
-                <Route path="/Discover" component={}/>
-            </Switch> */}
-    </div>
-  );
-};
+logOutButton
+       {/* <Switch>
+                <Route exact path="/" component={FormCreateStoryPictures}/>
+                <Route path="/SignIn" component={Login} />
+                <Route path="/SignUp" component={Register} />
+                <Route path="/Discover" component={FormCreateStoryPictures} /> 
+                
+      </Switch> */}
 
-export default NavBar;
+    </div>
+    )};
+    export default NavBar;
