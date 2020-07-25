@@ -1,11 +1,16 @@
 import React from "react";
+
 import { Link, Switch, Route } from "react-router-dom";
 import login from "../components/login.js";
 import register from "../components/register";
 import FormCreateStoryPictures from "../components/FormCreateStoryPictures.js"
 import App from "../App.css"
 
+logOutButton
+
+
 const NavBar = () => {
+  
   return (
     <div className="reactNavDiv">
       <nav className="reactNav">
@@ -16,6 +21,7 @@ const NavBar = () => {
         <Link className="navLink"  to="/Discover">Discover</Link>
         <Link className="navLink"  to="/Contribute">Contribute</Link>
       </nav>
+
       <Switch>
                {/*} <Route exact path="/" component={}/> */}
                 <Route exact path="/Login" component={login}/> 
@@ -25,6 +31,10 @@ const NavBar = () => {
             </Switch>
     </div>
   );
-};
 
-export default NavBar;
+logOutButton
+       
+
+    </div>
+    )};
+    export default NavBar;
