@@ -18,9 +18,9 @@ const NavBar = () => {
       </nav>
       <Switch>
                {/*} <Route exact path="/" component={}/> */}
-                <Route path="/Login" component={login}/> 
-                <Route path="/Register" component={register}/>
-                <Route path="/Contribute" component={FormCreateStoryPictures}/>
+                <Route exact path="/Login" component={login}/> 
+                <Route exact path="/Register" component={register}/>
+                <Route exact path="/Contribute" component={FormCreateStoryPictures}/>
                {/*} <Route path="/Discover" component={}/> */}
             </Switch>
     </div>
