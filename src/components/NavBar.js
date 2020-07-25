@@ -1,29 +1,39 @@
 import React from "react";
-logOutButton
-import { Link } from "react-router-dom";
 
+import { Link, Switch, Route } from "react-router-dom";
+import login from "../components/login.js";
+import register from "../components/register";
+import FormCreateStoryPictures from "../components/FormCreateStoryPictures.js"
+import App from "../App.css"
+
+logOutButton
 
 
 const NavBar = () => {
   
   return (
-    <div className="NavBar">
-      <nav>
-        <h3>Expat Journal</h3>
-        <Link to="/">Landing</Link>
-        <Link to="/Login">Log In</Link>
-        <Link to="/Register">Register</Link>
-        <Link to="/Discover">Discover</Link>
-        <Link to="/Contribute">Contribute</Link>
+    <div className="reactNavDiv">
+      <nav className="reactNav">
+        <h3 className="navTitle">Expat Journal</h3>
+        <Link className="navLink" to="/">Landing</Link>
+        <Link className="navLink"  to="/Login">Log In</Link>
+        <Link className="navLink"  to="/Register">Register</Link>
+        <Link className="navLink"  to="/Discover">Discover</Link>
+        <Link className="navLink"  to="/Contribute">Contribute</Link>
       </nav>
+
+      <Switch>
+               {/*} <Route exact path="/" component={}/> */}
+                <Route exact path="/Login" component={login}/> 
+                <Route exact path="/Register" component={register}/>
+                <Route exact path="/Contribute" component={FormCreateStoryPictures}/>
+               {/*} <Route path="/Discover" component={}/> */}
+            </Switch>
+    </div>
+  );
+
 logOutButton
-       {/* <Switch>
-                <Route exact path="/" component={FormCreateStoryPictures}/>
-                <Route path="/SignIn" component={Login} />
-                <Route path="/SignUp" component={Register} />
-                <Route path="/Discover" component={FormCreateStoryPictures} /> 
-                
-      </Switch> */}
+       
 
     </div>
     )};

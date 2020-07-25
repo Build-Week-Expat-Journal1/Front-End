@@ -353,6 +353,28 @@ table th {
   background: var(--light-color);
 }
 
+/* React Unit 1, Anna, Nav Bar */
+.reactNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color:var(--dark-color);
+  text-decoration: none;
+}
+
+.navTitle{
+  font-size: 1.2rem ;
+}
+
+.navLink{
+  text-decoration: none;
+  color: black;
+
+}
+
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -438,5 +460,23 @@ table th {
   .navbar ul {
     text-align: center;
     justify-content: center;
+  }
+
+  /* React Unit 1, Anna, Nav Bar*/
+  .reactNav{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navTitle{
+    font-size: 1.7rem;
+    padding-bottom: 2%;
+    padding-top: 1%;
+  }
+
+  .navLink{
+    padding: 1%;
+    font-size: 1.2rem;
   }
 }
