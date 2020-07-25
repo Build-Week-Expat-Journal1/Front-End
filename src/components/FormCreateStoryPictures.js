@@ -81,8 +81,15 @@ export default function FormCreateStoryPictures(){
 
     return(
 
-   // <h2>Create Your Story</h2>
+   <div className='form-container'>   
+
+   <h1> 
+       Create <span className='text-primary'>Your Story</span> 
+       </h1>
+
+   
     <form onSubmit = {formSubmit}>
+        <div className='form-group'>
         <label htmlFor = "user">
             User Name
             <input id="user" type="text" name="user" data-cy="user"
@@ -90,6 +97,7 @@ export default function FormCreateStoryPictures(){
             value={formState.name}
             />
         </label>
+        </div>
 
         <label htmlFor = "storyTitle">
             Title
@@ -123,7 +131,11 @@ export default function FormCreateStoryPictures(){
             />  
         </label>
 
-        <button disabled={isButtonDisabled} type="submit" name="submit" id="submit">
+        <button disabled={isButtonDisabled} 
+        className="btn btn-primary btn-block"
+        type="submit"
+         name="submit" 
+         id="submit">
             Publish
         </button>
 
@@ -133,6 +145,10 @@ export default function FormCreateStoryPictures(){
 
 
     </form>
+
+    </div>
+
+  
 
     )
 

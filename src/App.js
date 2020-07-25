@@ -20,12 +20,15 @@ const App = () => {
     <div className="App">
       <button onClick={logout}>Log Out</button>
       <NavBar />
+logOutButton
       <FormCreateStoryPictures />
      
+    
+
       <Router>
         <Switch>
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/Register" component={Register} />
+          <Route exact path="/Login" component={Login} />
         </Switch>
       </Router>
     </div>
