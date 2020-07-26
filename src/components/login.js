@@ -1,3 +1,4 @@
+
 //----------//
 // IMPORTS  //
 //----------//
@@ -9,21 +10,24 @@ import { withRouter } from "react-router-dom";
 //-----------------------//
 const Login = (props) => {
   const [user, setUser] = useState({
-    email: "", // DOES THIS NEED TO BE USERNAME?
+    email: "", // DOES THIS NEED TO BE USERNAME? From Jennifer YES it does or I need to change the database ;)
     password: "",
   });
 
   const { email, password } = user; //CHANGE EMAIL TO USERNAME?
+
 
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("Login submit");
+
     props.userLogin({ user }).then(() => {
       props.history.push("/Discover");
     });
     setUser("");
+
   };
 
   return (
@@ -55,4 +59,6 @@ const Login = (props) => {
     </div>
   );
 };
+
 export default withRouter(Login);
+
