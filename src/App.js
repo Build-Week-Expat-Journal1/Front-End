@@ -12,11 +12,11 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <FormCreateStoryPictures />
+    
       <Router>
         <Switch>
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/Register" component={Register} />
+          <Route exact path="/Login" component={Login} />
         </Switch>
       </Router>
     </div>
