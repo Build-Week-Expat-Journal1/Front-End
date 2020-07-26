@@ -31,7 +31,7 @@ const NavBar = () => {
             </Switch>
     </div>
   );
-
+  }
 logOutButton
        
 

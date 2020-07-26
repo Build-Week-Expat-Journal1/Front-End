@@ -18,7 +18,7 @@ const initialState = {
 //---------------------------//
 //     SIGNUP REDUCER        //
 //---------------------------//
-export const signUpReducer = (state = initalState, action) => {
+export const signUpReducer = (state = initialState, action) => {
     switch(action.type){
         case SIGNUP_START:
             return {
