@@ -9,7 +9,7 @@ import { axiosWithAuth } from '../utils';
 //------------------------------//
 export const LOGIN_START = 'USERS_LOGIN_START';
 export const LOGIN_SUCCESS = 'USERS_LOGIN_SUCCESS';
-export const LOGIN_FAIL = 'USERS_LOGIN_FAIL';
+export const LOGIN_FAILURE = 'USERS_LOGIN_FAIL';
 
 
 // ADD IN URL FROM BACKEND
