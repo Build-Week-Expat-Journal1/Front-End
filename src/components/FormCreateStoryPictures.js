@@ -81,26 +81,7 @@ export default function FormCreateStoryPictures() {
 
     return (
 
-<<<<<<< HEAD
-   <div className='form-container'>   
-
-   <h1> 
-       Create <span className='text-primary'>Your Story</span> 
-       </h1>
-
-   
-    <form onSubmit = {formSubmit}>
-        <div className='form-group'>
-        <label htmlFor = "user">
-            User Name
-            <input id="user" type="text" name="user" data-cy="user"
-            onChange={inputChange}
-            value={formState.name}
-            />
-        </label>
-        </div>
-=======
-
+<div>
         <h2>Create <span className='text-primary'>Your Story</span> </h2>
         <form onSubmit={formSubmit}>
             <label htmlFor="user">
@@ -111,7 +92,6 @@ export default function FormCreateStoryPictures() {
                 />
             </label>
 
->>>>>>> d6484e3372ae14be7cc354c80019159aabbb9379
 
             <label htmlFor="storyTitle">
                 Title
@@ -145,21 +125,11 @@ export default function FormCreateStoryPictures() {
                 />
             </label>
 
-<<<<<<< HEAD
-        <button disabled={isButtonDisabled} 
-        className="btn btn-primary btn-block"
-        type="submit"
-         name="submit" 
-         id="submit">
-            Publish
-        </button>
-=======
 
             <button disabled={isButtonDisabled} type="submit" name="submit" id="submit" className="btn btn-primary btn-block">
                 Publish
              </button>
        
->>>>>>> d6484e3372ae14be7cc354c80019159aabbb9379
 
             <pre>{JSON.stringify(formState, null, 2)}</pre>
             <pre>{JSON.stringify(post, null, 2)}</pre>
@@ -170,7 +140,6 @@ export default function FormCreateStoryPictures() {
 
     </div>
 
-  
 
     )
 
