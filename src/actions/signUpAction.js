@@ -1,7 +1,9 @@
 //----------------//
 //     IMPORT     //
 //----------------//
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+
 
 //------------------------------//
 //  EXPORT FROM SIGNUP REDUCER  //
