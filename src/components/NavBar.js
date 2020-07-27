@@ -1,10 +1,11 @@
 import React from "react";
 
 import { Link, Switch, Route } from "react-router-dom";
-import login from "../components/login.js";
+import login from "./Login.js";
 import register from "../components/register";
-import FormCreateStoryPictures from "../components/FormCreateStoryPictures.js";
-import App from "../App.css";
+import FormCreateStoryPictures from "../components/FormCreateStoryPictures.js"
+import App from "../App.css"
+
 
 const NavBar = () => {
   return (
@@ -37,6 +38,8 @@ const NavBar = () => {
       </Switch>
     </div>
   );
+
 };
 
 export default NavBar;
+
