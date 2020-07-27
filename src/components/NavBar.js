@@ -6,7 +6,7 @@ import register from "../components/register";
 import FormCreateStoryPictures from "../components/FormCreateStoryPictures.js"
 import App from "../App.css"
 
-logOutButton
+//logOutButton
 
 
 const NavBar = () => {
@@ -32,7 +32,7 @@ const NavBar = () => {
     </div>
   );
   }
-logOutButton
+//logOutButton
        
 
     
