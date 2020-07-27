@@ -35,6 +35,5 @@ const NavBar = () => {
 logOutButton
        
 
-    </div>
-    )};
+    
     export default NavBar;
