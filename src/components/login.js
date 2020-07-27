@@ -10,11 +10,11 @@ import { withRouter } from "react-router-dom";
 //-----------------------//
 const Login = (props) => {
   const [user, setUser] = useState({
-    email: "", // DOES THIS NEED TO BE USERNAME? From Jennifer YES it does or I need to change the database ;)
+    username: "", // DOES THIS NEED TO BE USERNAME? From Jennifer YES it does or I need to change the database ;)
     password: "",
   });
 
-  const { email, password } = user; //CHANGE EMAIL TO USERNAME?
+  const { username, password } = user; //CHANGE EMAIL TO USERNAME?
 
 
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
@@ -37,8 +37,8 @@ const Login = (props) => {
       </h1>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Email Address</label>
-          <input type="email" name="email" value={email} onChange={onChange} />
+          <label htmlFor="username">Username</label>
+          <input type="username" name="username" value={username} onChange={onChange} />
         </div>
         <div className="form-group">
           <label htmlFor="name">Password</label>
