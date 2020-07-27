@@ -13,7 +13,8 @@ export default function FormCreateStoryPictures(){
         date:"",
         storyBody:"",
         private:"",
-       // photo: []
+        photo: {}
+        
     };
 
     const [formState, setFormState]= useState(defaultState);
@@ -24,7 +25,10 @@ export default function FormCreateStoryPictures(){
         storyTitle: yup.string(),
         date: yup.date(),
         storyBody: yup.string(),
-        private: yup.boolean()
+        private: yup.boolean(),
+        photo: yup.object()
+        
+        
         
     })
 
@@ -74,6 +78,10 @@ export default function FormCreateStoryPictures(){
 
         };
 
+        const fileSelectorHandler = e =>{
+            console.log("This is file handler");
+        }
+
 
 
 
@@ -119,22 +127,26 @@ export default function FormCreateStoryPictures(){
 
 
                         <div className="form-group">
-                        <lable htmlFor="storyBody">
+                        <label htmlFor="storyBody">
                             Tell us your story
                         <textarea name="storyBody" id="storyBody" data-cy="storyBody"
                                 onChange={inputChange}
                                 value={formState.name}
                             />
-                        </lable>
+                        </label>
                         </div>
-            
+
+                       <label htmlFor="photo">
+                            <input type="file" id="photo" name="photo"
+                            onChange={fileSelectorHandler}
+                            />
+                        </label>
+             
                         <label htmlFor="private">
-                            
-                        <input type="checkbox" id="private" name="private" data-cy="private"
+                                <input type="checkbox" id="private" name="private" data-cy="private"
                                 onChange={inputChange}
                                 checked={formState.private}
-                            
-                            />
+                                />
                             This story is for my eyes only
                         </label>
             
