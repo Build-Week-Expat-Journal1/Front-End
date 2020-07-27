@@ -8,7 +8,7 @@ export default function FormCreateStoryPictures(){
     const [isButtonDisabled, setIsButtonDisabled] =useState(true);
 
     const defaultState = {
-        user:"",
+        username:"",
         storyTitle:"",
         date:"",
         storyBody:"",
@@ -20,7 +20,7 @@ export default function FormCreateStoryPictures(){
     const [errors, setErrors] = useState(defaultState);
 
     const formSchema = yup.object().shape({
-        user: yup.string(),
+        username: yup.string(),
         storyTitle: yup.string(),
         date: yup.date(),
         storyBody: yup.string(),
@@ -82,17 +82,22 @@ export default function FormCreateStoryPictures(){
  return (
 
             <div className='form-container'>
-                    <h2>Create <span className='text-primary'>Your Story</span> </h2>
+                    <h1>Create <span className='text-primary'>Your Story</span> </h1>
+
                     <form onSubmit={formSubmit}>
-                        <label htmlFor="user">
+                        <div className="form-group">
+                        <label htmlFor="username">
                             User Name
-                        <input id="user" type="text" name="user" data-cy="user"
+                        <input id="username" type="text" name="username" data-cy="username"
                                 onChange={inputChange}
                                 value={formState.name}
                             />
+                    
                         </label>
+                        </div>
+                    
             
-            
+                        <div className="form-group">
                         <label htmlFor="storyTitle">
                             Title
                         <input id="storyTitle" type="text" name="storyTitle" data-cy="storyTitle"
@@ -100,7 +105,9 @@ export default function FormCreateStoryPictures(){
                                 value={formState.name}
                             />
                         </label>
-            
+                        </div>
+
+                        <div className="form-group">
                         <label htmlFor="date">
                             Date
                         <input id="date" type="text" name="date" data-cy="date"
@@ -108,7 +115,10 @@ export default function FormCreateStoryPictures(){
                                 value={formState.name}
                             />
                         </label>
-            
+                        </div>
+
+
+                        <div className="form-group">
                         <lable htmlFor="storyBody">
                             Tell us your story
                         <textarea name="storyBody" id="storyBody" data-cy="storyBody"
@@ -116,6 +126,7 @@ export default function FormCreateStoryPictures(){
                                 value={formState.name}
                             />
                         </lable>
+                        </div>
             
                         <label htmlFor="private">
                             
