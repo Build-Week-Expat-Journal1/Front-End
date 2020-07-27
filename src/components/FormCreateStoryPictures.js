@@ -79,61 +79,69 @@ export default function FormCreateStoryPictures(){
 
 
 
-    return(
+ return (
 
-   // <h2>Create Your Story</h2>
-    <form onSubmit = {formSubmit}>
-        <label htmlFor = "user">
-            User Name
-            <input id="user" type="text" name="user" data-cy="user"
-            onChange={inputChange}
-            value={formState.name}
-            />
-        </label>
-
-        <label htmlFor = "storyTitle">
-            Title
-            <input id="storyTitle" type="text" name="storyTitle" data-cy="storyTitle"
-            onChange={inputChange}
-            value={formState.name}
-            />
-        </label>
-
-        <label htmlFor = "date">
-            Date
-            <input id="date" type="text" name="date" data-cy="date"
-            onChange={inputChange}
-            value={formState.name}
-            />
-        </label>
-
-        <lable htmlFor="storyBody">
-            Tell us your story
-            <textarea name="storyBody" id="storyBody" data-cy="storyBody"
-            onChange={inputChange}
-            value={formState.name}
-            />
-        </lable>
-
-        <label htmlFor = "private"> 
-            This story is for my eyes only
-            <input type="checkbox" id="private" name="private" data-cy="private"
-            onChange={inputChange}
-            checked={formState.private}
-            />  
-        </label>
-
-        <button disabled={isButtonDisabled} type="submit" name="submit" id="submit">
-            Publish
-        </button>
-
-        <pre>{JSON.stringify(formState,null,2)}</pre>
-        <pre>{JSON.stringify(post,null,2)}</pre>
-
-
-
-    </form>
-
-    )
-
-}
+            <div className='form-container'>
+                    <h2>Create <span className='text-primary'>Your Story</span> </h2>
+                    <form onSubmit={formSubmit}>
+                        <label htmlFor="user">
+                            User Name
+                        <input id="user" type="text" name="user" data-cy="user"
+                                onChange={inputChange}
+                                value={formState.name}
+                            />
+                        </label>
+            
+            
+                        <label htmlFor="storyTitle">
+                            Title
+                        <input id="storyTitle" type="text" name="storyTitle" data-cy="storyTitle"
+                                onChange={inputChange}
+                                value={formState.name}
+                            />
+                        </label>
+            
+                        <label htmlFor="date">
+                            Date
+                        <input id="date" type="text" name="date" data-cy="date"
+                                onChange={inputChange}
+                                value={formState.name}
+                            />
+                        </label>
+            
+                        <lable htmlFor="storyBody">
+                            Tell us your story
+                        <textarea name="storyBody" id="storyBody" data-cy="storyBody"
+                                onChange={inputChange}
+                                value={formState.name}
+                            />
+                        </lable>
+            
+                        <label htmlFor="private">
+                            
+                        <input type="checkbox" id="private" name="private" data-cy="private"
+                                onChange={inputChange}
+                                checked={formState.private}
+                            
+                            />
+                            This story is for my eyes only
+                        </label>
+            
+            
+                        <button disabled={isButtonDisabled} type="submit" name="submit" id="submit" className="btn btn-primary btn-block">
+                            Publish
+                         </button>
+                   
+            
+                        <pre>{JSON.stringify(formState, null, 2)}</pre>
+                        <pre>{JSON.stringify(post, null, 2)}</pre>
+            
+            
+            
+                    </form>
+            
+                </div>
+            
+            
+                )
+             }
