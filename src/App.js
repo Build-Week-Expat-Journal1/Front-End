@@ -17,16 +17,16 @@ const App = () => {
 
   return (
     <div className="App">
-      <button onClick={logout}>Log Out</button>
+      {/* <button onClick={logout}>Log Out</button>
       <NavBar />
       logOutButton
-      {/*<FormCreateStoryPictures />*/}
+      <FormCreateStoryPictures />
       <Router>
         <Switch>
           <Route exact path="/Register" component={Register} />
           <Route exact path="/Login" component={Login} />
         </Switch>
-      </Router>
+      </Router> */}
     </div>
   );
 };
