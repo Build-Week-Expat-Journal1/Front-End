@@ -1,16 +1,18 @@
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
+// import React from "react";
 // import "./App.css";
 
 
-// export default function Display(props){
+// const Display = (props) => {
 
 
-//     return(
+//   return(
+//   <h2>Hey Hey an object will go here</h2>
 
 
     
 
 
-    );
-};
+//     );
+// };
+
+// export default Display;
