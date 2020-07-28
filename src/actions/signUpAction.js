@@ -20,7 +20,7 @@ export const SIGNUP_FAILURE = "SIGNUP_USER_FAILURE";
 export const signUp = credentials => dispatch => {
   dispatch({ type: SIGNUP_START });
   axiosWithAuth()
-    .post("/api/signup", credentials) //api/register or signup
+    .post("/register", credentials) 
     .then(res => {
       localStorage.setItem("token", res.data.token);
       dispatch({
