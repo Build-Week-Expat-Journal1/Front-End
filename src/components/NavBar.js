@@ -1,10 +1,10 @@
 import React from "react";
 
 import { Link, Switch, Route } from "react-router-dom";
-import login from "./Login.js";
+import login from "./login.js";
 import register from "../components/register";
 import FormCreateStoryPictures from "../components/FormCreateStoryPictures.js"
-import App from "../App.css"
+// import App from "../App.css"
 
 
 const NavBar = () => {

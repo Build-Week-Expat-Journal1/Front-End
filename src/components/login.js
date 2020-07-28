@@ -3,18 +3,20 @@
 // IMPORTS  //
 //----------//
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
+import { connect } from 'react-redux';
+import { userLogin } from '../actions/loginAction';
+
 
 //-----------------------//
 // BEGIN LOGIN COMPONENT //
 //-----------------------//
 const Login = (props) => {
   const [user, setUser] = useState({
-    username: "", // DOES THIS NEED TO BE USERNAME? From Jennifer YES it does or I need to change the database ;)
+    username: "", 
     password: "",
   });
 
-  const { username, password } = user; //CHANGE EMAIL TO USERNAME?
+  const { username, password } = user; 
 
 
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
@@ -27,7 +29,6 @@ const Login = (props) => {
       props.history.push("/Discover");
     });
     setUser("");
-
   };
 
   return (
@@ -60,5 +61,15 @@ const Login = (props) => {
   );
 };
 
-export default withRouter(Login);
+const mapStateToProps = state => {
+   return ({
+      token: state.token,
+      error: state.error
 
+   })
+}
+
+export default connect(
+   mapStateToProps, 
+   { userLogin } 
+)(Login);
