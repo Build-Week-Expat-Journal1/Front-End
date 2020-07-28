@@ -20,7 +20,7 @@ const App = () => {
       <button onClick={logout}>Log Out</button>
       <NavBar />
       logOutButton
-      <FormCreateStoryPictures />
+      {/*<FormCreateStoryPictures />*/}
       <Router>
         <Switch>
           <Route exact path="/Register" component={Register} />
