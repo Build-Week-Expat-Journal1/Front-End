@@ -9,10 +9,18 @@ import FormCreateStoryPictures from "./components/FormCreateStoryPictures";
 import NavBar from "./components/NavBar";
 
 const App = () => {
+  const logout = e => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    window.location.reload(false);
+  };
+
   return (
     <div className="App">
+      <button onClick={logout}>Log Out</button>
       <NavBar />
-    
+      logOutButton
+      <FormCreateStoryPictures />
       <Router>
         <Switch>
           <Route exact path="/Register" component={Register} />
@@ -25,10 +33,8 @@ const App = () => {
 
 export default App;
 
-{
-  /*Because im using Router  make sure to use /register path after localhost3006  you hae to access to the exact path in order for the forms to render 
+/*Because im using Router  make sure to use /register path after localhost3006  you hae to access to the exact path in order for the forms to render 
 
 Example: 
 localhost3006/register  
 localhost3006/login */
-}
