@@ -13,7 +13,7 @@ export default function FormCreateStoryPictures(){
         date:"",
         storyBody:"",
         private:"",
-        photo: {}
+        
         
     };
 
@@ -26,7 +26,7 @@ export default function FormCreateStoryPictures(){
         date: yup.date(),
         storyBody: yup.string(),
         private: yup.boolean(),
-        photo: yup.object()
+        
         
         
         
@@ -136,11 +136,6 @@ export default function FormCreateStoryPictures(){
                         </label>
                         </div>
 
-                       <label htmlFor="photo">
-                            <input type="file" id="photo" name="photo"
-                            onChange={fileSelectorHandler}
-                            />
-                        </label>
              
                         <label htmlFor="private">
                                 <input type="checkbox" id="private" name="private" data-cy="private"
