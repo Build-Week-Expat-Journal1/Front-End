@@ -5,6 +5,7 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { userLogin } from '../actions/loginAction';
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 
 //-----------------------//
@@ -19,17 +20,26 @@ const Login = (props) => {
   const { username, password } = user; 
 
 
-  const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
+  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("Login submit");
+    axiosWithAuth()
+    .post("/login", user)
+    .then(props.userLogin(user))
+    .then((res) => {
+       localStorage.setItem("token", res.data.token);
+       props.history.push("/Discover");
+    })
+    .catch((err) => console.log(err.ressponse));
+   };
 
-    props.userLogin({ user }).then(() => {
-      props.history.push("/Discover");
-    });
-    setUser("");
-  };
+//     props.userLogin({ user }).then(() => {
+//       props.history.push("/Discover");
+//     });
+//     setUser("");
+//   };
 
   return (
     <div className="form-container">
