@@ -1,9 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import { Link, Switch, Route } from "react-router-dom";
-import login from "./login.js";
-import register from "../components/register";
-import FormCreateStoryPictures from "../components/FormCreateStoryPictures.js"
+
 // import App from "../App.css"
 
 
@@ -28,14 +26,6 @@ const NavBar = () => {
           Contribute
         </Link>
       </nav>
-
-      <Switch>
-        {/*} <Route exact path="/" component={}/> */}
-        <Route exact path="/Login" component={login} />
-        <Route exact path="/Register" component={register} />
-        <Route exact path="/Contribute" component={FormCreateStoryPictures} />
-        {/*} <Route path="/Discover" component={}/> */}
-      </Switch>
     </div>
   );
 
