@@ -17,21 +17,11 @@ const Register = (props) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  //   const onSubmit = (e) => {
-  //     e.preventDefault();
-  //     console.log("Register submit");
-  //     axiosWithAuth()
-  //     .post("/register", user)
-
-  //     props.signUp(user).then(() => props.history.push("/"));
-  //     setUser('');
-  //   };
-
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("Register submit");
     axiosWithAuth()
-      .post("/register", user)
+      .post("/users/register", user)
       .then(props.signUp(user))
       .then((res) => {
         localStorage.setItem("token", res.data.token);

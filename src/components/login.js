@@ -26,7 +26,7 @@ const Login = (props) => {
     e.preventDefault();
     console.log("Login submit");
     axiosWithAuth()
-    .post("/login", user)
+    .post("/users/login", user)
     .then(props.userLogin(user))
     .then((res) => {
        localStorage.setItem("token", res.data.token);
