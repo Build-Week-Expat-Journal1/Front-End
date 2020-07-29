@@ -7,6 +7,7 @@ export const axiosWithAuth = () => {
             Authorization: token,
         },
         baseURL: "https://expat-journal-prod.herokuapp.com/",
+
     });
 };
 
