@@ -35,12 +35,6 @@ const Login = (props) => {
     .catch((err) => console.log(err.ressponse));
    };
 
-//     props.userLogin({ user }).then(() => {
-//       props.history.push("/Discover");
-//     });
-//     setUser("");
-//   };
-
   return (
     <div className="form-container">
       <h1>

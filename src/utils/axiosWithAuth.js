@@ -6,6 +6,7 @@ export const axiosWithAuth = () => {
         headers: {
             Authorization: token,
         },
-        baseURL: "https://expat-journal-prod.herokuapp.com",
+        baseURL: "https://expat-journal-prod.herokuapp.com/",
     });
 };
+
