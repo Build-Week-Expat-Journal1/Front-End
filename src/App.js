@@ -1,13 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {Route, Switch } from "react-router-dom";
 import "./App.css";
 import register from "./components/register";
 import login from "./components/login";
 import FormCreateStoryPictures from "./components/FormCreateStoryPictures"
 
 import "./App.css";
-// import FormCreateStoryPictures from "./components/FormCreateStoryPictures";
+
 import NavBar from "./components/NavBar";
+import DisplayMap from "./components/DisplayMap.js"
 
 const App = () => {
   const logout = e => {
@@ -26,7 +27,7 @@ const App = () => {
           <Route exact path="/Login" component={login} />
           <Route exact path="/Contribute" component={FormCreateStoryPictures} />
           {/*} <Route exact path="/" component={}/> */}
-        {/*} <Route path="/Discover" component={}/> */}
+          <Route path="/Discover" component={DisplayMap}/> 
         </Switch>
     </div>
   );

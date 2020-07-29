@@ -25,9 +25,8 @@ const Login = (props) => {
     e.preventDefault();
     console.log("Login submit");
 
-    props.userLogin({ user }).then(() => {
+    props.userLogin( user );
       props.history.push("/Discover");
-    });
     setUser("");
   };
 
