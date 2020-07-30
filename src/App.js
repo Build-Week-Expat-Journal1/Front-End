@@ -23,7 +23,7 @@ const App = () => {
       {/* <button onClick={logout}>Log Out</button> */}
       <NavBar />
       {/* <SlideShow /> */}
-      {/*<FormCreateStoryPictures />*/}
+
       <Switch>
         <Route exact path="/Register" component={register} />
         <Route exact path="/Login" component={login} />
