@@ -1,12 +1,11 @@
 import React from "react";
 import App from "../App.css";
-import { deleteStory} from "../actions/deleteUpdateAction";
+import { deleteStory } from "../actions/deleteUpdateAction";
 import { connect } from "react-redux";
 
-const Display = (props) => {
-  
-  const handleDelete = () => {
-   
+const Display = props => {
+  const handleDelete = e => {
+    e.preventDefault();
     props.deleteStory(props.user_id, props.history);
   };
 
