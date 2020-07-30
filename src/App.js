@@ -21,7 +21,7 @@ const App = () => {
     <div className="App">
       {/* <button onClick={logout}>Log Out</button> */}
       <NavBar />
-      {/*<FormCreateStoryPictures />*/}
+
       <Switch>
         <Route exact path="/Register" component={register} />
         <Route exact path="/Login" component={login} />
@@ -31,6 +31,7 @@ const App = () => {
         <PrivateRoute exact path="/Contribute" component={FormCreateStoryPictures}/>
         <PrivateRoute exact path="/Discover" component={DisplayMap} />
       </Switch>
+
     </div>
   );
 };
