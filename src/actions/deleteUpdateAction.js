@@ -1,12 +1,22 @@
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-export const DELETE_STORY = 'DELETE_STORY';
-export const DELETE_FAILURE = 'DELETE_FAILURE';
-export const UPDATE_STORY = 'UPDATE_STORY';
+export const DELETE_STORY_START = "DELETE_STORY_START";
+export const DELETE_STORY_SUCCESS = "DELETE_STORY_SUCCESS";
+export const DELETE_STORY_FAIL = "DELETE_STORY_FAIL";
 
-export const deleteStory = props => dispatch => {
-    axiosWithAuth()
-    .delete('/stories/delete/:id')
-    .then(res => props.history.push('/Discover'))
-    .catch(err => dispatch({ type: DELETE_FAILURE, payload: err}))
-}
+export const deleteStory = (storyTitle) => (dispatch) => {
+  dispatch({ type: DELETE_STORY_START });
+  axiosWithAuth()
+    .delete(`/stories/delete/${storyTitle}`)
+    .then((res) => {
+      //  window.location.reload();
+      dispatch({
+        type: DELETE_STORY_SUCCESS,
+        payload: res.data.id,
+      });
+    })
+
+    .catch((e) => {
+      dispatch({ type: DELETE_STORY_FAIL, payload: e });
+    });
+};

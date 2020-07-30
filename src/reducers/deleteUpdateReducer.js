@@ -1,45 +1,54 @@
 //---------------------------//
 //     IMPORT ACTIONS        //
 //---------------------------//
-import { DELETE_STORY, EDIT_STORY } from "../actions/deleteUpdateAction";
+import * as actions from "../actions/deleteUpdateAction";
 
 //---------------------------//
 //     INITIAL STATE         //
 //---------------------------//
-const initialState = {
-  user: "",
+export const initialState ={
   stories: [
     {
-      user_id: "",
-      storyTitle: "",
-      storyAdded: "",
-      storyDate: "",
-      story: "",
-      img: "",
-    },
+      user_id: '',
+      storyTitle: '',
+      storyAdded: '',
+      storyDate: '',
+      story: '', 
+      img: ''
+    }
   ],
+  isFetching: false
 };
+ 
 
 //-------------------------------------//
 //      DELETE / UPDATE REDUCER        //
 //-------------------------------------//
 export const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case DELETE_STORY:
-      return {
-        ...state,
-        stories: [...action.payload],
-      };
-    case DELETE_FAILURE:
-      return {
-        ...state,
-        deleteStory: false,
-        error: action.payload,
-      };
-    case EDIT_STORY:
-      return {};
+  switch(action.type){
+    case actions.DELETE_STORY_START:
+      return{
+        ...state, 
+        error: '',
+        isFetching: true
+      }
 
-    default:
-      return state;
+      case actions.DELETE_STORY_SUCCESS:
+        return {
+          ...state, 
+          error: '',
+          isFetching: false, 
+          stories: action.payload
+        }
+
+        case actions.DELETE_STORY_FAIL:
+          return {
+            ...state, 
+            error: '',
+            isFetching: false
+          }
+
+          default: 
+          return state;
   }
-};
+}

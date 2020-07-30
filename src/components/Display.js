@@ -1,6 +1,6 @@
 import React from "react";
 import App from "../App.css";
-import { deleteStory } from "../actions/deleteUpdateAction";
+import { deleteStory} from "../actions/deleteUpdateAction";
 import { connect } from "react-redux";
 
 const Display = (props) => {
