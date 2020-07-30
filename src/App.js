@@ -7,7 +7,7 @@ import FormCreateStoryPictures from "./components/FormCreateStoryPictures";
 import NavBar from "./components/NavBar";
 import DisplayMap from "./components/DisplayMap.js";
 import PrivateRoute from "./utils/PrivateRoute";
-
+import Landing from "./components/Landing";
 import "./App.css";
 
 const App = () => {
@@ -25,6 +25,7 @@ const App = () => {
       <Switch>
         <Route exact path="/Register" component={register} />
         <Route exact path="/Login" component={login} />
+        <Route exact path="/Landing" component={Landing} />
 
         {/* These are the private Routes */}
         <PrivateRoute exact path="/Contribute" component={FormCreateStoryPictures}/>
