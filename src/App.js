@@ -30,7 +30,10 @@ const App = () => {
         {/* These are the private Routes */}
         <PrivateRoute exact path="/Contribute" component={FormCreateStoryPictures}/>
         <PrivateRoute exact path="/Discover" component={DisplayMap} />
+
+    
       </Switch>
+      <Landing />
     </div>
   );
 };
