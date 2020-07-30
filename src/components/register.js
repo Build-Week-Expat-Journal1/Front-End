@@ -1,20 +1,37 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { signUp } from "../actions/signUpAction";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-const Register = () => {
+const Register = (props) => {
   const [user, setUser] = useState({
     name: "",
-    email: "",
+    username: "",
     password: "",
     password2: "",
   });
 
-  const { name, email, password, password2 } = user;
+  const { name, username, password, password2 } = user;
 
-  const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
+  const onChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("Register submit");
+    axiosWithAuth()
+      .post("/users/register", user)
+      .then(props.signUp(user))
+      .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        props.history.push("/Login");
+      })
+      .catch((err) => console.log(err.response));
+    setUser({
+      username: "",
+      password: "",
+    });
   };
 
   return (
@@ -28,8 +45,13 @@ const Register = () => {
           <input type="text" name="name" value={name} onChange={onChange} />
         </div>
         <div className="form-group">
-          <label htmlFor="name">Email Address</label>
-          <input type="email" name="email" value={email} onChange={onChange} />
+          <label htmlFor="name">Username</label>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={onChange}
+          />
         </div>
         <div className="form-group">
           <label htmlFor="name">Password</label>
@@ -58,4 +80,4 @@ const Register = () => {
     </div>
   );
 };
-export default Register;
+export default connect(null, { signUp })(Register);

@@ -1,15 +1,17 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import Register from "./components/register";
-import Login from "./components/login";
-
-import "./App.css";
+import register from "./components/register";
+import login from "./components/login";
 import FormCreateStoryPictures from "./components/FormCreateStoryPictures";
 import NavBar from "./components/NavBar";
+import DisplayMap from "./components/DisplayMap.js";
+import PrivateRoute from "./utils/PrivateRoute";
+import Landing from "./components/Landing";
+import "./App.css";
 
 const App = () => {
-  const logout = e => {
+  const logout = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
     window.location.reload(false);
@@ -17,24 +19,21 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <button onClick={logout}>Log Out</button>
+      {/* <button onClick={logout}>Log Out</button> */}
       <NavBar />
-      logOutButton
-      <FormCreateStoryPictures />
-      <Router>
-        <Switch>
-          <Route exact path="/Register" component={Register} />
-          <Route exact path="/Login" component={Login} />
-        </Switch>
-      </Router> */}
+
+      <Switch>
+        <Route exact path="/Register" component={register} />
+        <Route exact path="/Login" component={login} />
+        <Route exact path="/Landing" component={Landing} />
+
+        {/* These are the private Routes */}
+        <PrivateRoute exact path="/Contribute" component={FormCreateStoryPictures}/>
+        <PrivateRoute exact path="/Discover" component={DisplayMap} />
+      </Switch>
+
     </div>
   );
 };
 
 export default App;
-
-/*Because im using Router  make sure to use /register path after localhost3006  you hae to access to the exact path in order for the forms to render 
-
-Example: 
-localhost3006/register  
-localhost3006/login */
