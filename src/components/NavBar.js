@@ -12,6 +12,7 @@ const NavBar = () => {
     <div className="reactNavDiv">
       <nav className="reactNav">
         <h3 className="navTitle">Expat Journal</h3>
+
         <a href="https://expatphoto.netlify.app/" className="navLink">
           Landing
         </a>
