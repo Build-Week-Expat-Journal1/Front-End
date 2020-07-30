@@ -1,9 +1,9 @@
 // import React from 'react';
 // import { Slide } from 'react-slideshow-image';
-// import slide_2 from './public/images/slide_1.jpg';
-// import slide_3 from '../public/images/slide_3.jpg';
-// import slide_4 from '../public/images/slide_4.jpg';
-// import slide_5 from '../public/images/slide_5.jpg';
+// import slide_2 from '../images/slide_1.jpg';
+// import slide_3 from '../images/slide_2.jpg';
+// import slide_4 from '../images/slide_3.jpg';
+// import slide_5 from '../images/slide_4
 
 
 // const slideImages =[

@@ -7,8 +7,9 @@ import FormCreateStoryPictures from "./components/FormCreateStoryPictures";
 import NavBar from "./components/NavBar";
 import DisplayMap from "./components/DisplayMap.js";
 import PrivateRoute from "./utils/PrivateRoute";
-import Landing from "./components/Landing";
+// import SlideShow from "./components/SlideShow";
 import "./App.css";
+
 
 const App = () => {
   const logout = (e) => {
@@ -21,15 +22,20 @@ const App = () => {
     <div className="App">
       {/* <button onClick={logout}>Log Out</button> */}
       <NavBar />
+      {/* <SlideShow /> */}
+
       <Switch>
         <Route exact path="/Register" component={register} />
         <Route exact path="/Login" component={login} />
-        <Route exact path="/Landing" component={Landing} />
+        {/* <Route exact path="/Landing" component={Landing} /> */}
 
         {/* These are the private Routes */}
         <PrivateRoute exact path="/Contribute" component={FormCreateStoryPictures}/>
         <PrivateRoute exact path="/Discover" component={DisplayMap} />
+
+    
       </Switch>
+      
     </div>
   );
 };
