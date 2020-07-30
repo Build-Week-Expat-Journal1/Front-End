@@ -13,7 +13,6 @@
               date:"",
               storyBody:"",
               private:"",
-              photo: {}
               
           };
       
@@ -26,7 +25,6 @@
               date: yup.date(),
               storyBody: yup.string(),
               private: yup.boolean(),
-              photo: yup.object()
               
               
               
@@ -78,9 +76,7 @@
       
               };
       
-              const fileSelectorHandler = e =>{
-                  console.log("This is file handler");
-              }
+              
       
       
       
@@ -136,11 +132,6 @@
                               </label>
                               </div>
       
-                             <label htmlFor="photo">
-                                  <input type="file" id="photo" name="photo"
-                                  onChange={fileSelectorHandler}
-                                  />
-                              </label>
                    
                               <label htmlFor="private">
                                       <input type="checkbox" id="private" name="private" data-cy="private"
@@ -156,8 +147,8 @@
                                </button>
                          
                   
-                              <pre>{JSON.stringify(formState, null, 2)}</pre>
-                              <pre>{JSON.stringify(post, null, 2)}</pre>
+                              
+                              {/* <pre>{JSON.stringify(post, null, 2)}</pre> */}
                   
                   
                   
