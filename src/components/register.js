@@ -25,7 +25,7 @@ const Register = (props) => {
       .then(props.signUp(user))
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        props.history.push("/Discover");
+        props.history.push("/Login");
       })
       .catch((err) => console.log(err.response));
     setUser({

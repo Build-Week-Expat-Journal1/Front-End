@@ -1,18 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 // import App from "../App.css"
-
 
 const NavBar = () => {
   return (
     <div className="reactNavDiv">
       <nav className="reactNav">
         <h3 className="navTitle">Expat Journal</h3>
-        <Link className="navLink" to="/">
+        <a href="https://expatphoto.netlify.app/" className="navLink">
           Landing
-        </Link>
+        </a>
         <Link className="navLink" to="/Login">
           Log In
         </Link>
@@ -28,8 +26,6 @@ const NavBar = () => {
       </nav>
     </div>
   );
-
 };
 
 export default NavBar;
-
