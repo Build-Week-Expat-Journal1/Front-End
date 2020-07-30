@@ -18,25 +18,24 @@ const App = () => {
   };
 
   return (
-    // <Router>
-    <div className="App">
-      {/* <button onClick={logout}>Log Out</button> */}
-      <NavBar />
-      {/*<FormCreateStoryPictures />*/}
-      {/* <Switch>
-        <Route exact path="/Register" component={register} />
-        <Route path="/Login" component={login} /> */}
-
-        {/* These are the private Routes */}
-        {/* <PrivateRoute
-          exact
-          path="/Contribute"
-          component={FormCreateStoryPictures}
-        />
-        <PrivateRoute exact path="/Discover" component={DisplayMap} />
-      </Switch> */}
-    </div>
-    //  </Router>
+    <Router>
+      <div className="App">
+        {/* <button onClick={logout}>Log Out</button> */}
+        <NavBar />
+        {/*<FormCreateStoryPictures />*/}
+        <Switch>
+          <Route exact path="/Register" component={register} />
+          <Route path="/Login" component={login} /> */}
+          {/* These are the private Routes */}
+          <PrivateRoute
+            exact
+            path="/Contribute"
+            component={FormCreateStoryPictures}
+          />
+          <PrivateRoute exact path="/Discover" component={DisplayMap} />
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
