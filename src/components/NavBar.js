@@ -15,10 +15,10 @@ const NavBar = () => {
       <div className="reactNavDiv">
         <nav className="reactNav">
           <h3 className="navTitle">Expat Journal</h3>
-          <Link className="navLink" to="/Landing">
+          <Link className="navLink" to="/">
             Landing
           </Link>
-          <Link className="navLink" to="/">
+          <Link className="navLink" to="/Login">
             Log In
           </Link>
           <Link className="navLink" to="/Register">
@@ -34,7 +34,7 @@ const NavBar = () => {
 
         <Switch>
           <Route path="/Register" component={register} />
-          <Route path="/" component={login} />
+          <Route path="/Login" component={login} />
 
           {/* These are the private Routes */}
           <PrivateRoute
