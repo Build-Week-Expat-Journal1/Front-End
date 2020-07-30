@@ -21,7 +21,14 @@ const DisplayMap = () => {
     <div className="DisplayMap">
       <h2 className="DisplayMapHeader">Discover</h2>
       {items.map(travel => (
-        <Display key={travel.id} item={travel} />
+        <Display key={travel.id}  
+        storyDate={travel.storyDate}
+        storyTitle={travel.storyTitle}
+        story={travel.story}
+        img={travel.img}
+        
+        
+        />
       ))}
     </div>
   );
