@@ -3,7 +3,8 @@ import {Route, Switch } from "react-router-dom";
 import "./App.css";
 import register from "./components/register";
 import login from "./components/login";
-import FormCreateStoryPictures from "./components/FormCreateStoryPictures"
+import FormCreateStoryPictures from "./components/FormCreateStoryPictures";
+import Landing from "./components/Landing"
 
 import "./App.css";
 
@@ -26,7 +27,7 @@ const App = () => {
           <Route exact path="/Register" component={register} />
           <Route exact path="/Login" component={login} />
           <Route exact path="/Contribute" component={FormCreateStoryPictures} />
-          {/*} <Route exact path="/" component={}/> */}
+          <Route exact path="/Landing" component={Landing} />
           <Route path="/Discover" component={DisplayMap}/> 
         </Switch>
     </div>
