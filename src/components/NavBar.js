@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-
-// import App from "../App.css"
+import { Link, Switch, Route } from "react-router-dom";
+import login from "./login.js";
+import register from "../components/register";
+import FormCreateStoryPictures from "../components/FormCreateStoryPictures.js"
+import App from "../App.css"
 
 
 const NavBar = () => {
@@ -10,9 +12,10 @@ const NavBar = () => {
     <div className="reactNavDiv">
       <nav className="reactNav">
         <h3 className="navTitle">Expat Journal</h3>
-        <Link className="navLink" to="/Landing">
+
+        <a href="https://expatphoto.netlify.app/" className="navLink">
           Landing
-        </Link>
+        </a>
         <Link className="navLink" to="/Login">
           Log In
         </Link>
@@ -28,8 +31,6 @@ const NavBar = () => {
       </nav>
     </div>
   );
-
 };
 
 export default NavBar;
-

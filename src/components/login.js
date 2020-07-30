@@ -1,33 +1,35 @@
-
 //----------//
 // IMPORTS  //
 //----------//
 import React, { useState } from "react";
-import { connect } from 'react-redux';
-import { userLogin } from '../actions/loginAction';
-
+import { connect } from "react-redux";
+import { userLogin } from "../actions/loginAction";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 //-----------------------//
 // BEGIN LOGIN COMPONENT //
 //-----------------------//
-const Login = (props) => {
+const Login = props => {
   const [user, setUser] = useState({
-    username: "", 
-    password: "",
+    username: "",
+    password: ""
   });
 
-  const { username, password } = user; 
+  const { username, password } = user;
 
+  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 
-  const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
-
-  const onSubmit = (e) => {
+  const onSubmit = e => {
     e.preventDefault();
     console.log("Login submit");
-
-    props.userLogin( user );
-      props.history.push("/Discover");
-    setUser("");
+    axiosWithAuth()
+      .post("/users/login", user)
+      .then(props.userLogin(user))
+      .then(res => {
+        localStorage.setItem("token", res.data.token);
+        props.history.push("/Discover");
+      })
+      .catch(err => console.log(err.ressponse));
   };
 
   return (
@@ -38,7 +40,12 @@ const Login = (props) => {
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username</label>
-          <input type="username" name="username" value={username} onChange={onChange} />
+          <input
+            type="username"
+            name="username"
+            value={username}
+            onChange={onChange}
+          />
         </div>
         <div className="form-group">
           <label htmlFor="name">Password</label>
@@ -61,14 +68,10 @@ const Login = (props) => {
 };
 
 const mapStateToProps = state => {
-   return ({
-      token: state.token,
-      error: state.error
+  return {
+    token: state.token,
+    error: state.error
+  };
+};
 
-   })
-}
-
-export default connect(
-   mapStateToProps, 
-   { userLogin } 
-)(Login);
+export default connect(mapStateToProps, { userLogin })(Login);

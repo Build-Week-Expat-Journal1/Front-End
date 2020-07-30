@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { connect } from 'react-redux';
-import { signUp } from '../actions/signUpAction';
+import { connect } from "react-redux";
+import { signUp } from "../actions/signUpAction";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Register = (props) => {
   const [user, setUser] = useState({
@@ -19,10 +20,17 @@ const Register = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("Register submit");
-    props.signUp(user).then(() => props.history.push("/"));
+    axiosWithAuth()
+      .post("/users/register", user)
+      .then(props.signUp(user))
+      .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        props.history.push("/Login");
+      })
+      .catch((err) => console.log(err.response));
     setUser({
-       username: '',
-       password: ''
+      username: "",
+      password: "",
     });
   };
 
@@ -38,7 +46,12 @@ const Register = (props) => {
         </div>
         <div className="form-group">
           <label htmlFor="name">Username</label>
-          <input type="text" name="username" value={username} onChange={onChange} />
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={onChange}
+          />
         </div>
         <div className="form-group">
           <label htmlFor="name">Password</label>
@@ -67,7 +80,4 @@ const Register = (props) => {
     </div>
   );
 };
-export default connect(
-   null, 
-   {signUp}
-)(Register);
+export default connect(null, { signUp })(Register);
