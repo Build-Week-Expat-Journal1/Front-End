@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import register from "./components/register";
 import login from "./components/login";
@@ -18,24 +18,19 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <div className="App">
-        {/* <button onClick={logout}>Log Out</button> */}
-        <NavBar />
-        {/*<FormCreateStoryPictures />*/}
-        <Switch>
-          <Route exact path="/Register" component={register} />
-          <Route path="/Login" component={login} /> */}
-          {/* These are the private Routes */}
-          <PrivateRoute
-            exact
-            path="/Contribute"
-            component={FormCreateStoryPictures}
-          />
-          <PrivateRoute exact path="/Discover" component={DisplayMap} />
-        </Switch>
-      </div>
-    </Router>
+    <div className="App">
+      {/* <button onClick={logout}>Log Out</button> */}
+      <NavBar />
+      {/*<FormCreateStoryPictures />*/}
+      <Switch>
+        <Route exact path="/Register" component={register} />
+        <Route exact path="/Login" component={login} />
+
+        {/* These are the private Routes */}
+        <PrivateRoute exact path="/Contribute" component={FormCreateStoryPictures}/>
+        <PrivateRoute exact path="/Discover" component={DisplayMap} />
+      </Switch>
+    </div>
   );
 };
 
