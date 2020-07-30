@@ -5,13 +5,14 @@ import { connect } from "react-redux";
 
 const Display = (props) => {
   
-  const handleDelete = (e) => {
-    props.deleteStory(props.story, props.history);
+  const handleDelete = () => {
+   
+    props.deleteStory(props.user_id, props.history);
   };
 
   return (
     <div className="DataDisplay">
-      <img src={props.img} />
+      <img src={props.img} alt="travel-img" />
       <h2>{props.storyTitle}</h2>
       <h3>Date written: {props.storyDate}</h3>
       <p>{props.story}</p>

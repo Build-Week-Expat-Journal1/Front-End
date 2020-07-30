@@ -7,7 +7,7 @@ import FormCreateStoryPictures from "./components/FormCreateStoryPictures";
 import NavBar from "./components/NavBar";
 import DisplayMap from "./components/DisplayMap.js";
 import PrivateRoute from "./utils/PrivateRoute";
-import SlideShow from "./components/SlideShow";
+// import SlideShow from "./components/SlideShow";
 import "./App.css";
 
 
@@ -22,7 +22,7 @@ const App = () => {
     <div className="App">
       {/* <button onClick={logout}>Log Out</button> */}
       <NavBar />
-      <SlideShow />
+      {/* <SlideShow /> */}
       {/*<FormCreateStoryPictures />*/}
       <Switch>
         <Route exact path="/Register" component={register} />

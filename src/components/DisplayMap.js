@@ -26,7 +26,7 @@ const DisplayMap = () => {
         storyTitle={travel.storyTitle}
         story={travel.story}
         img={travel.img}
-        
+        user_id={travel.user_id}
         
         />
       ))}

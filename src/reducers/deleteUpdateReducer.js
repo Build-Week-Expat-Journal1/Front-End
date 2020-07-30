@@ -38,7 +38,7 @@ export const reducer = (state = initialState, action) => {
           ...state, 
           error: '',
           isFetching: false, 
-          stories: action.payload
+          stories: null
         }
 
         case actions.DELETE_STORY_FAIL:
