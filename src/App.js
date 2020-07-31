@@ -7,9 +7,12 @@ import FormCreateStoryPictures from "./components/FormCreateStoryPictures";
 import NavBar from "./components/NavBar";
 import DisplayMap from "./components/DisplayMap.js";
 import PrivateRoute from "./utils/PrivateRoute";
-//import SlideShow from "./components/SlideShow";
-import "./App.css";
 
+import CreateStory from "./components/CreateStory";
+// import SlideShow from "./components/SlideShow";
+
+import "./App.css";
+import { CreateStory } from "./components/CreateStory";
 
 const App = () => {
   const logout = (e) => {
@@ -29,12 +32,14 @@ const App = () => {
         {/* <Route exact path="/" component={SlideShow} />  */}
 
         {/* These are the private Routes */}
-        <PrivateRoute exact path="/Contribute" component={FormCreateStoryPictures}/>
+        <PrivateRoute
+          exact
+          path="/Contribute"
+          component={FormCreateStoryPictures}
+        />
         <PrivateRoute exact path="/Discover" component={DisplayMap} />
-
-    
+        <PrivateRoute exact path="/CreateStory" component={CreateStory} />
       </Switch>
-      
     </div>
   );
 };

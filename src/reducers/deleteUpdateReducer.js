@@ -6,9 +6,10 @@ import * as actions from "../actions/deleteUpdateAction";
 //---------------------------//
 //     INITIAL STATE         //
 //---------------------------//
-export const initialState ={
+export const initialState = {
   stories: [
     {
+
       user_id: '',
       storyTitle: '',
       storyAdded: '',
@@ -38,7 +39,7 @@ export const reducer = (state = initialState, action) => {
           ...state, 
           error: '',
           isFetching: false, 
-          stories: null
+          stories: ''
         }
 
         case actions.DELETE_STORY_FAIL:
