@@ -9,6 +9,7 @@ import * as actions from "../actions/deleteUpdateAction";
 export const initialState = {
   stories: [
     {
+
       user_id: '',
       storyTitle: '',
       storyAdded: '',

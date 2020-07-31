@@ -1,34 +1,49 @@
-//----------------//
-//     IMPORT     //
-//----------------//
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+import {axiosWithAuth} from "../utils/axiosWithAuth";
 
-//-------------------------------------//
-//  EXPORT FROM CREATE STORY REDUCER   //
-//-------------------------------------//
-export const CREATE_NEW_STORY_START = "CREATE_NEW_STORY_START";
-export const CREATE_STORY_SUCCESS = "CREATE_STORY_SUCCESS";
-export const CREATE_STORY_FAILURE = "CREATE_STORY_FAILURE";
+// getPosts action suite for Posts.js
+export const GET_POSTS_START = "GET_POSTS_START";
+export const GET_POSTS_SUCCESS = "GET_POSTS_SUCCESS";
+export const GET_POSTS_FAILURE = "GET_POSTS_FAILURE";
 
-//-------------------------//
-// CREATE NEW STORY ACTION //
-//-------------------------//
+export const  ADD_POST_START ="ADD_POST_START";
+export const ADD_POST_SUCCESS = "ADD_POST_SUCCESS";
+export const ADD_POST_FAILURE = "ADD_POST_FAILURE";
 
-export const addNewStory = (story, adding) => (dispatch) => {
-  console.log(story);
-  dispatch({ type: CREATE_NEW_STORY_START });
-  axiosWithAuth()
-    .post('/stories/add', adding)
-    .then((res) => {
-      dispatch({
-        type: CREATE_STORY_SUCCESS,
-        payload: res.data.data.stories,
+
+export const getPosts = () => dispatch => {
+    dispatch({ type: GET_POSTS_START });
+    axiosWithAuth()
+      .get(`/stories`)
+      .then(response => {
+        dispatch({
+          type: GET_POSTS_SUCCESS,
+          payload: response.data.stories
+        });
+      })
+      .catch(error => {
+        dispatch({
+          type: GET_POSTS_FAILURE,
+          payload: error
+        });
+        console.log(error);
       });
-    })
-    .catch((err) => {
-      dispatch({
-        type: CREATE_STORY_FAILURE,
-        payload: err
+  };
+  export const addStory = post => dispatch => {
+    const token = localStorage.getItem("token");
+    dispatch({ type: ADD_POST_START });
+    console.log(post);
+    axiosWithAuth()
+      .post(`stories/add`, post, {
+        headers: {
+          Authorization: token
+        }
+      })
+      .then(response => {
+        console.log(response.data.stories);
+        dispatch({ type: ADD_POST_SUCCESS, payload: response.post });
+      })
+      .catch(error => {
+        console.log(error.response);
+        dispatch({ type: ADD_POST_FAILURE, payload: error.errorMessage });
       });
-    });
-};
+  };

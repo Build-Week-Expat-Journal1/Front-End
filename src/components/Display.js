@@ -1,6 +1,6 @@
 import React from "react";
 import App from "../App.css";
-import { deleteStory, selectStory } from "../actions/deleteUpdateAction";
+import { deleteStory  } from "../actions/deleteUpdateAction";
 import { connect } from "react-redux";
 
 const Display = props => {
@@ -9,9 +9,9 @@ const Display = props => {
     props.deleteStory(props.id);
   };
 
-  const handleEdit = e => {
-    props.selectStory(props);
-  }
+  // const handleEdit = e => {
+  //   props.selectStory(props);
+  // }
 
   return (
     <div className="DataDisplay">
@@ -21,11 +21,11 @@ const Display = props => {
       <p>{props.story}</p>
 
       <button onClick={handleDelete}>Delete</button>
-      <button onClick={handleEdit} >Edit</button>
+      {/* <button onClick={handleEdit} >Edit</button> */}
     </div>
   );
 };
 
 
 
-export default connect(null, { deleteStory, selectStory })(Display);
+export default connect(null, { deleteStory})(Display);

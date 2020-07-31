@@ -22,12 +22,12 @@ export const deleteStory = id => dispatch => {
 };
 
 
-export const EDIT_STORY = 'SELECT_STORY';
+// export const EDIT_STORY = 'SELECT_STORY';
 
-export const editStory = (props, editedStory) => dispatch => {
-  dispatch({ type: START_FETCHING })
-  axiosWithAuth()
-  .put(`/stories/update/${id}`, editedStory)
-  .then(res => props.history.push('/Discover'))
-  .catch(err => dispatch({ type: FETCH_FAILURE, payload: err}))
-}
+// export const selectStory = (props, editedStory) => dispatch => {
+//   dispatch({ type: START_FETCHING })
+//   axiosWithAuth()
+//   .put(`/stories/update/${id}`, editedStory)
+//   .then(res => props.history.push('/Discover'))
+//   .catch(err => dispatch({ type: FETCH_FAILURE, payload: err}))
+// }
