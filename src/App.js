@@ -10,7 +10,6 @@ import PrivateRoute from "./utils/PrivateRoute";
 // import SlideShow from "./components/SlideShow";
 import "./App.css";
 
-
 const App = () => {
   const logout = (e) => {
     e.preventDefault();
@@ -30,12 +29,14 @@ const App = () => {
         {/* <Route exact path="/Landing" component={Landing} /> */}
 
         {/* These are the private Routes */}
-        <PrivateRoute exact path="/Contribute" component={FormCreateStoryPictures}/>
+        <PrivateRoute
+          exact
+          path="/Contribute"
+          component={FormCreateStoryPictures}
+        />
         <PrivateRoute exact path="/Discover" component={DisplayMap} />
-
-    
+        {/* <PrivateRoute exact path="CreateStory" component={createStoryForm} /> */}
       </Switch>
-      
     </div>
   );
 };
