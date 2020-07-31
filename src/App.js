@@ -7,6 +7,7 @@ import FormCreateStoryPictures from "./components/FormCreateStoryPictures";
 import NavBar from "./components/NavBar";
 import DisplayMap from "./components/DisplayMap.js";
 import PrivateRoute from "./utils/PrivateRoute";
+import NewStory from "./components/NewStory";
 // import SlideShow from "./components/SlideShow";
 import "./App.css";
 
@@ -35,7 +36,7 @@ const App = () => {
           component={FormCreateStoryPictures}
         />
         <PrivateRoute exact path="/Discover" component={DisplayMap} />
-        {/* <PrivateRoute exact path="CreateStory" component={createStoryForm} /> */}
+        <PrivateRoute exact path="/CreateStory" component={NewStory} />
       </Switch>
     </div>
   );

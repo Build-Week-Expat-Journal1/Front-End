@@ -14,13 +14,13 @@ import {
 export const initialState = {
 stories: [
     {
-      user_id: '',
-      storyTitle: '',
-      storyAdded: '',
-      storyDate: '',
+    //   user_id: '',
+     storyTitle: '',
+    //   storyAdded: '',
+    //   storyDate: '',
       story: '', 
-      img: ''
-    }
+    //   img: ''
+     }
   ],
   isFetching: false
 };

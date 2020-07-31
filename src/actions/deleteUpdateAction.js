@@ -20,3 +20,14 @@ export const deleteStory = id => dispatch => {
       dispatch({ type: DELETE_STORY_FAIL, payload: e });
     });
 };
+
+
+export const EDIT_STORY = 'SELECT_STORY';
+
+export const editStory = (props, editedStory) => dispatch => {
+  dispatch({ type: START_FETCHING })
+  axiosWithAuth()
+  .put(`/stories/update/${id}`, editedStory)
+  .then(res => props.history.push('/Discover'))
+  .catch(err => dispatch({ type: FETCH_FAILURE, payload: err}))
+}

@@ -25,6 +25,9 @@ const NavBar = () => {
         <Link className="navLink" to="/Contribute">
           Contribute
         </Link>
+        <Link to="/CreateStory">
+          Create New Story
+        </Link>
       </nav>
     </div>
   );
