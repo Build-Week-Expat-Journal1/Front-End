@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 const Display = props => {
   const handleDelete = e => {
     e.preventDefault();
-    props.deleteStory(props.user_id, props.history);
+    props.deleteStory(props.id);
   };
 
   return (
@@ -20,5 +20,7 @@ const Display = props => {
     </div>
   );
 };
+
+
 
 export default connect(null, { deleteStory })(Display);
