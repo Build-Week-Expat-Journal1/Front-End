@@ -9,17 +9,7 @@ import {
    
   } from "../actions/createStoryAction";
   const initialState = {
-    stories: [
-      {
-        user_id: '',
-        storyTitle: '',
-        storyAdded: '',
-        storyDate: '',
-        story: '', 
-        img: ''
-      }
-    ],
-  
+    stories: [],
     error: null,
     gettingPosts: false,
     postingPosts: false,

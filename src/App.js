@@ -9,9 +9,10 @@ import DisplayMap from './components/DisplayMap.js';
 import PrivateRoute from './utils/PrivateRoute';
 
 import CreateStory from './components/CreateStory';
-// import SlideShow from "./components/SlideShow";
+
 
 import './App.css';
+import Slideshow from './components/Slideshow';
 
 const App = () => {
   const logout = e => {
@@ -28,6 +29,7 @@ const App = () => {
       <Switch>
         <Route exact path='/Register' component={register} />
         <Route exact path='/Login' component={login} />
+
         {/* <Route exact path="/" component={SlideShow} />  */}
 
         {/* These are the private Routes */}
@@ -39,6 +41,7 @@ const App = () => {
         <PrivateRoute exact path='/Discover' component={DisplayMap} />
         <PrivateRoute exact path='/CreateStory' component={CreateStory} />
       </Switch>
+      <Slideshow />
     </div>
   );
 };
