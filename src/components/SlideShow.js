@@ -1,111 +1,44 @@
-// import React from 'react';
-// import { Slide } from 'react-slideshow-image';
-// import slide_1 from '../images/slide_1.jpg';
-// import slide_2 from '../images/slide_2.jpg';
-// import slide_3 from '../images/slide_3.jpg';
-// //import slide_4 from './images/slide_4.jpg';
-// //import slide_5 from './images/slide_5.jpg';
-// import '../Slide.css'
+import React from 'react';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
+ import '../Slide.css';
+
+ import slide_2 from '../images/slide_2.jpg';
+import slide_3 from '../images/slide_1.jpg';
+import slide_4 from '../images/slide_3.jpg';
+import slide_5 from '../images/slide_4.jpg';
 
 
-// const proprietes = {
-//     duration: 5000,
-//     transitionDuration: 500,
-//     infinite: true,
-//     indicators: true,
-//     arrows: true
-// }
+const slideImages =[
+    slide_2,
+  slide_3, 
+  slide_4,
+  slide_5
 
-// const Slideshow = () => {
-//     return (
-//         <div className="containerSlide">
-//             <Slide {...proprietes}>
-//                 <div className="each-slide">
-//                     <div>
-//                         <img src={slide_1} alt="slide1" />
-//                     </div>
-//                 </div>
-//                 <div className="each-slide">
-//                     <div>
-//                         <img src={slide_2} alt="slide2" />
-//                     </div>
-//                 </div>
-//                 <div className="each-slide">
-//                     <div>
-//                         <img src={slide_3} alt="slide3" />
-//                     </div>
-//                 </div>
-//             </Slide>
-//         </div>
-//     )
-// }
+];
+ 
+const Slideshow = () => {
+    return (
+      <div className="slide-container">
+        <Slide>
+          <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+         
+            </div>
+          </div>
+          <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
+            
+            </div>
+          </div>
+          <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
+         
+            </div>
+          </div>
+        </Slide>
+      </div>
+    )
+}
 
-// export default Slideshow;
-
-
-
-
-
-
-
-// import React from 'react';
-// import { Slide } from 'react-slideshow-image';
-// import slide_2 from '../images/slide_1.jpg';
-// import slide_3 from '../images/slide_2.jpg';
-// import slide_4 from '../images/slide_3.jpg';
-// import slide_5 from '../images/slide_4.jpg';
-// import '../App.css'
-
-
-// const slideImages =[
-//      slide_2,
-//      slide_3, 
-//      slide_4,
-//      slide_5
-//     ];
-
-
-// const properties = {
-//     duration: 5000,
-//     transitionDuration: 500,
-//     infinite: true,
-//   indicators: true,
-//   arrows: true,
-//   pauseOnHover: true,
-//   onChange: (oldIndex, newIndex) => {
-//     console.log(`slide transition from ${oldIndex} to ${newIndex}`);
-//   }
-// }
-
-// const SlideShow = () => {
-
-//     return (
-
-//     <div className="slide-container">
-//         <h2> This is the Slide Show</h2>
-//     <Slide {...properties}>
-//       <div className="each-slide">
-//         <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
-//           <span>Plan Your Trip</span>
-//         </div>
-//       </div>
-//       <div className="each-slide">
-//         <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
-//           <span>Plan Your Trip</span>
-//         </div>
-//       </div>
-//       <div className="each-slide">
-//         <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
-//           <span>Go On Your Adventure</span>
-//         </div>
-//       </div>
-//       <div className="each-slide">
-//         <div style={{'backgroundImage': `url(${slideImages[3]})`}}>
-//           <span>Go On Your Adventure</span>
-//         </div>
-//       </div>
-//     </Slide>
-//   </div>
-//     )
-// }
-// export default SlideShow;
+export default Slideshow;

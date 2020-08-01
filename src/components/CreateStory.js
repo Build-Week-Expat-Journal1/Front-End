@@ -3,7 +3,14 @@ import { connect } from "react-redux";
 import { addStory } from "../actions/createStoryAction";
 
 export function CreateStory({ addStory }) {
-  const [post, setPostValues] = useState({ story: "", storyTitle: "" });
+  let d = new Date().toISOString();
+  const [post, setPostValues] = useState({
+    user_id: localStorage.getItem("user_id"),
+    storyAdded: d,
+    story: "",
+    storyTitle: "",
+    img: "",
+  });
 
   const handleChange = (event) => {
     setPostValues({
@@ -24,6 +31,17 @@ export function CreateStory({ addStory }) {
       <div className="create-post">
         <p className="create-title">What would you like to share?</p>
         <form onSubmit={handleSubmit} className="container">
+          <label>{post.user_id}</label>
+
+          <label>
+            <input
+              type="text"
+              name="storyTitle"
+              value={post.storyTitle}
+              onChange={handleChange}
+              placeholder="title.."
+            />
+          </label>
           <label>
             <input
               type="text"
@@ -35,12 +53,17 @@ export function CreateStory({ addStory }) {
           </label>
           <label>
             <input
-              type="text"
-              name="storyTitle"
-              value={post.storyTitle}
+              type="date"
+              name="storyAdded"
+              value={post.storyAdded}
               onChange={handleChange}
-              placeholder="title.."
             />
+            <input
+              type="file"
+              name="fileupload"
+              value={post.img}
+              id="fileupload"
+            ></input>
           </label>
           <button onClick={handleSubmit}>Send your Post</button>
         </form>
