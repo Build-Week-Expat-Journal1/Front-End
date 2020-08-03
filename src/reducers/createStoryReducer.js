@@ -5,7 +5,9 @@ import {
     
     ADD_POST_START,
     ADD_POST_SUCCESS,
-    ADD_POST_FAILURE
+    ADD_POST_FAILURE,
+
+    
    
   } from "../actions/createStoryAction";
   const initialState = {
@@ -58,6 +60,8 @@ import {
           isAddingPost: false,
           error: action.payload,
         };
+
+       
   
       default:
         return state;

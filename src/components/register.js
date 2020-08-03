@@ -15,6 +15,7 @@ const Register = (props) => {
 
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
+  
   };
 
   const onSubmit = (e) => {
@@ -25,13 +26,14 @@ const Register = (props) => {
       .then(props.signUp(user))
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        props.history.push("/Login");
+        // props.history.push("/Discover");
       })
       .catch((err) => console.log(err.response));
     setUser({
       username: "",
       password: "",
     });
+    props.history.push("/Discover");
   };
 
   return (

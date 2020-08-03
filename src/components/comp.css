@@ -1,0 +1,35 @@
+.create-title {
+    text-align: center;
+}
+
+input[type='text']{
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+  }
+  
+.create-post{
+    max-width: 500px;
+    margin: 2rem auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+.update{
+    
+    max-width: 500px;
+    margin: 2rem auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+.DataDisplay{
+    max-width: 1000px;
+    margin: 2rem auto;
+    margin-left: 24%;
+    overflow: hidden;
+    padding: 0 2rem;
+
+}

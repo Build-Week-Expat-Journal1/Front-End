@@ -308,6 +308,7 @@ input[type='text'],
 input[type='email'],
 input[type='password'],
 input[type='date'],
+input
 select,
 textarea {
   display: block;
@@ -545,4 +546,11 @@ height: 20rem;
   } */
 
  
- 
+  input[type='username']{
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+

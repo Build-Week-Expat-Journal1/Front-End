@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addStory } from "../actions/createStoryAction";
+import { useHistory } from "react-router-dom";
+import './comp.css';
 
 export function CreateStory({ addStory }) {
-  let d = new Date().toISOString();
+  let d = new Date().toUTCString;
   const [post, setPostValues] = useState({
     user_id: localStorage.getItem("user_id"),
     storyAdded: d,
@@ -11,6 +13,8 @@ export function CreateStory({ addStory }) {
     storyTitle: "",
     img: "",
   });
+
+  const { push } = useHistory();
 
   const handleChange = (event) => {
     setPostValues({
@@ -25,14 +29,15 @@ export function CreateStory({ addStory }) {
       return alert("!Please complete the blanks!");
     }
     addStory(post);
+    push("/Discover");
   };
   return (
     <div>
       <div className="create-post">
-        <p className="create-title">What would you like to share?</p>
+        <h1 className="create-title"> What would you <span className="text-primary">like to share?</span></h1>
         <form onSubmit={handleSubmit} className="container">
-          <label>{post.user_id}</label>
-
+          <label> User ID: {post.user_id}</label>
+          <h1>{post.storyDate}</h1>
           <label>
             <input
               type="text"
