@@ -29,6 +29,7 @@ const NavBar = () => {
           Create New Story
         </Link>
       </nav>
+   
     </div>
   );
 };

@@ -9,6 +9,9 @@ export const ADD_POST_START = 'ADD_POST_START';
 export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
 export const ADD_POST_FAILURE = 'ADD_POST_FAILURE';
 
+export const EDIT_STORY = 'EDIT_STORY';
+export const ADD_STORY = 'ADD_STORY';
+
 export const getPosts = () => dispatch => {
   dispatch({ type: GET_POSTS_START });
   axiosWithAuth()
@@ -46,3 +49,21 @@ export const addStory = post => dispatch => {
       dispatch({ type: ADD_POST_FAILURE, payload: error.errorMessage });
     });
 };
+
+export const getData = () => dispatch => {
+  dispatch({ type: ADD_STORY });
+  axiosWithAuth()
+  .get("/stories")
+  .then(res => {
+    dispatch({ type: EDIT_STORY, payload: res.data.stories})
+  })
+  .catch(err => {
+    console.log("ERROR fetching:", err)
+  })
+
+}
+
+export const editStoryAction = storyEdit => {
+  return ({ type: EDIT_STORY, payload: storyEdit})
+}
+

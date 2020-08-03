@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { userLogin } from "../actions/loginAction";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import '../App.css';
 
 //-----------------------//
 // BEGIN LOGIN COMPONENT //

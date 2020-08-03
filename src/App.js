@@ -7,6 +7,7 @@ import FormCreateStoryPictures from './components/FormCreateStoryPictures';
 import NavBar from './components/NavBar';
 import DisplayMap from './components/DisplayMap.js';
 import PrivateRoute from './utils/PrivateRoute';
+import UpdateForm from './components/UpdateForm';
 
 import CreateStory from './components/CreateStory';
 
@@ -30,6 +31,10 @@ const App = () => {
         <Route exact path='/Register' component={register} />
         <Route exact path='/Login' component={login} />
 
+        <Route
+        path="/stories/update/:id"
+        render={() => <UpdateForm /> }
+      />
         {/* <Route exact path="/" component={SlideShow} />  */}
 
         {/* These are the private Routes */}
